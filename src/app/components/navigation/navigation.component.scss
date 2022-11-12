@@ -1,0 +1,141 @@
+.navigation {
+  padding: 20px 70px 30px 70px;
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEEEEE;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .logo-icon {
+      padding: 0;
+    }
+
+    .logo-title {
+      color: #F5385D;
+      font-weight: 600;
+      font-size: 22px;
+      margin-left: 10px;
+    }
+  }
+
+  .filter {
+    min-width: 480px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 70px;
+
+    color: rgba(0, 0, 0, 0.70);
+
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.10);
+
+    gap: 30px;
+
+    &.active {
+      width: 650px;
+      height: 80px;
+      padding: 15px 50px;
+    }
+
+    .non-active-filter {
+      display: grid;
+      grid-template-columns: 150px 100px 1fr;
+      align-items: center;
+
+      .filter-option {
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        padding: 10px 0;
+
+        &.choose {
+          &::after {
+            display: block;
+            position: absolute;
+            content: '';
+
+            width: 1px;
+            height: 20px;
+
+            top: 50%;
+            left: 100%;
+
+            transform: translateY(-50%);
+
+            background: #EEEEEE;
+          }
+        }
+
+        &.search {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .icon-search {
+            position: relative;
+            background: #F5385D;
+            border-radius: 50%;
+            padding: 16px;
+
+            margin-left: auto;
+            margin-right: 15px;
+          }
+        }
+      }
+
+      .vertical {
+        width: 1px;
+        height: 20px;
+
+        background: #EEEEEE;
+      }
+    }
+
+    .active-form {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+
+      .active-form_option {
+        width: 170px;
+      }
+    }
+
+
+    .mat-icon.filter-search-icon {
+
+      font-size: 21px;
+      font-weight: 600;
+      color: #FFFFFF;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+    .submit-button {
+      margin-left: 15px;
+      .mat-button-base {
+        background: #F5385D;
+      }
+    }
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+
+    .profile-button {
+      border-radius: 20px;
+
+      border: 2px solid #EEEEEE;
+    }
+
+  }
+}
