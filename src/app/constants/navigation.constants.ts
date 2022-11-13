@@ -21,6 +21,6 @@ export enum FILTER_OPTIONS {
 export const LocationOptions = [
   'France',
   'Italy',
-  'Ukraine',
-  'Geramy'
+  'Greece',
+  'Croatia'
 ];

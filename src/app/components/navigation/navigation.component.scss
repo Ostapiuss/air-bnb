@@ -22,7 +22,7 @@
   }
 
   .filter {
-    min-width: 480px;
+    min-width: 380px;
     height: 55px;
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
@@ -42,7 +42,7 @@
 
     .non-active-filter {
       display: grid;
-      grid-template-columns: 150px 100px 1fr;
+      grid-template-columns: 150px 150px 70px;
       align-items: center;
 
       .filter-option {
@@ -50,6 +50,11 @@
         cursor: pointer;
         position: relative;
         padding: 10px 0;
+
+        .title {
+          font-weight: 600;
+          font-size: 14px;
+        }
 
         &.choose {
           &::after {
@@ -108,22 +113,25 @@
 
 
     .mat-icon.filter-search-icon {
-
       font-size: 21px;
       font-weight: 600;
       color: #FFFFFF;
       position: absolute;
       left: 50%;
       top: 50%;
-
       transform: translate(-50%, -50%);
+    }
+
+    .mat-button-base.mat-button-disabled {
+      background: #838383;
+    }
+
+    .mat-button-base {
+      background: #F5385D;
     }
 
     .submit-button {
       margin-left: 15px;
-      .mat-button-base {
-        background: #F5385D;
-      }
     }
   }
 

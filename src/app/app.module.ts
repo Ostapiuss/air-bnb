@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 
 //Material Components
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-import { MainComponent } from './pages/main/main.component';
+import { MainComponent } from './components/main/main.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -26,10 +27,13 @@ import { PanelComponent } from './shared/components/panel/panel.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from 'app/app.effects';
 import { reducers, metaReducers } from 'app/reducers';
+import { environment } from '../environments/environment';
+import { TourComponent } from './pages/tour/tour.component';
+import { NoDataWidgetComponent } from './shared/components/no-data-widget/no-data-widget.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { reducers, metaReducers } from 'app/reducers';
     NavigationComponent,
     MainComponent,
     PanelComponent,
+    TourComponent,
+    NoDataWidgetComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,7 @@ import { reducers, metaReducers } from 'app/reducers';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects])
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

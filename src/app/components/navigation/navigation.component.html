@@ -6,13 +6,12 @@
   <div class="filter" [ngClass]="{'active': isUseFilterNavigation}">
     <div class="non-active-filter" *ngIf="!isUseFilterNavigation; else activeForm">
       <div class="filter-option choose" (click)="handleOptionClick(this.options.ARRIVED)">
-        <span>Where to go?</span>
+        <span class="title">Where to go?</span>
       </div>
       <div class="filter-option choose" (click)="handleOptionClick(this.options.DEPARTURE)">
-        Arrive Date
+        <span class="title">Arrive Date</span>
       </div>
       <div class="filter-option search">
-        <span>Add people</span>
         <div class="icon-search">
           <mat-icon class="filter-search-icon">search</mat-icon>
         </div>
@@ -26,13 +25,19 @@
             placeholder="Where to go"
             aria-label="place"
             matInput
-            formControlName="where"
+            formControlName="country"
             [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let option of autoCompleteOptions | async" [value]="option">
               {{option}}
             </mat-option>
           </mat-autocomplete>
+          <mat-hint
+            class="error"
+            *ngIf="navigationForm.get('country')?.errors && navigationForm.get('country')?.touched"
+            align="start">
+            {{ navigationForm.get('country')?.errors?.required ? 'Choose the country. This field is required' : '' }}
+          </mat-hint>
         </mat-form-field>
         <mat-form-field class="active-form_option">
           <mat-label>Arrive Date</mat-label>
@@ -60,8 +65,21 @@
           <mat-date-range-picker #departureDate></mat-date-range-picker>
         </mat-form-field>
         <div class="submit-button">
-          <button mat-fab color="accent" aria-label="Submit Search" type="submit" (click)="submitNavigationForm()">
-            <mat-icon class="filter-search-icon">search</mat-icon>
+          <button
+            mat-fab
+            color="accent"
+            aria-label="Submit Search"
+            type="submit"
+            (click)="submitNavigationForm()"
+            [disabled]="navigationForm.invalid"
+          >
+            <mat-icon
+              class="filter-search-icon"
+              [matTooltip]="navigationForm.invalid ? 'First of all choose required filter' : ''"
+
+            >
+              search
+            </mat-icon>
           </button>
         </div>
       </form>
