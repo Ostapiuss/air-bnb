@@ -1,0 +1,8 @@
+<div class="app-tour">
+  <app-panel *ngFor="let place of places" [placeItem]="place"></app-panel>
+  <app-no-data-widget *ngIf="places.length <= 0" [textMessage]="'Data is empty, please change filter or reset it'">
+    <div class="rest-filter">
+      <button mat-stroked-button (click)="resetFilters()">Reset Filters</button>
+    </div>
+  </app-no-data-widget>
+</div>

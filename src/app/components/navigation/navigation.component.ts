@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { FILTER_OPTIONS, LocationOptions } from '@constants/navigation';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
+
+import { Store } from '@ngrx/store';
+import { setFilters } from 'app/reducers/app';
+
+import { FILTER_OPTIONS, LocationOptions } from '@constants/navigation.constants';
 
 @Component({
   selector: 'app-navigation',
@@ -13,9 +17,9 @@ import { startWith, map } from 'rxjs/operators';
 
 export class NavigationComponent implements OnInit {
   navigationForm: FormGroup = new FormGroup({
-    where: new FormControl(null, Validators.required),
-    arriveDate: new FormControl(null, Validators.required),
-    departureDate: new FormControl(null, Validators.required),
+    country: new FormControl(null, Validators.required),
+    arriveDate: new FormControl(null),
+    departureDate: new FormControl(null),
   });
   // @ts-ignore
   autoCompleteOptions: Observable<string[]>;
@@ -25,13 +29,13 @@ export class NavigationComponent implements OnInit {
   activeOptions: any;
   locationOptions: string[];
 
-  constructor() {
+  constructor(private store: Store) {
     this.options = FILTER_OPTIONS;
     this.locationOptions = LocationOptions;
   }
 
   ngOnInit(): void {
-    this.autoCompleteOptions = this.navigationForm.controls['where'].valueChanges.pipe(
+    this.autoCompleteOptions = this.navigationForm.controls['country'].valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
@@ -60,6 +64,8 @@ export class NavigationComponent implements OnInit {
   };
 
   submitNavigationForm() {
-    console.log(this.navigationForm);
+    this.store.dispatch(setFilters({
+      filters: { ...this.navigationForm.value }
+    }))
   }
 }

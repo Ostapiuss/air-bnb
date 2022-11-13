@@ -4,6 +4,12 @@ export const PLACES_MASTER = [
     title: 'Ada Bojana, Italy',
     subTitle: 'Luxury lifestyle, Best Luxury',
     country: 'Italy',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 14 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 17 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     id: '1',
     price: '220',
     priceValue: 'dollar',
@@ -20,6 +26,12 @@ export const PLACES_MASTER = [
     icon: 'https://a0.muscache.com/im/pictures/monet/Luxury-578072673038532316/original/5953cf7e-4bf6-405c-b2b3-baa33d2d82e0?im_w=720',
     title: 'Villa Hedone, France',
     country: 'France',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 16 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 25 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     subTitle: 'Saint-Raphaël, Provence-Alpes-Côte d\'Azur',
     price: '320',
     id: '2',
@@ -38,6 +50,12 @@ export const PLACES_MASTER = [
     title: 'Villa Akuna, Croatia',
     subTitle: 'Selca, Croatia',
     country: 'Croatia',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 17 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 30 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     price: '500',
     id: '2',
     priceValue: 'dollar',
@@ -54,6 +72,12 @@ export const PLACES_MASTER = [
     icon: 'https://a0.muscache.com/im/pictures/dde07563-55d2-4add-b447-606f53eed969.jpg?im_w=720',
     title: 'Sanatorini, Greece',
     country: 'Greece',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 115 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 25 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     subTitle: 'at a distance of 1614 km from the sea',
     price: '420',
     id: '2',
@@ -71,6 +95,16 @@ export const PLACES_MASTER = [
     icon: 'https://a0.muscache.com/im/pictures/3fb756fc-5e88-4aaf-96a5-26e06a2b632f.jpg?im_w=720',
     title: 'Manzolla, Italy',
     country: 'Italy',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 14 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 22 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+      {
+        settlements: 'Mon Nov 18 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 28 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     subTitle: 'at a distance of 1890 km from the sea',
     price: '700',
     id: '2',
@@ -88,6 +122,12 @@ export const PLACES_MASTER = [
     icon: 'https://a0.muscache.com/im/pictures/d2737390-2699-4b63-9196-d2ed4c750d35.jpg?im_w=720',
     title: 'Shamoni, France',
     country: 'France',
+    availableDate: [
+      {
+        settlements: 'Mon Nov 18 2022 00:00:00 GMT+0200 (Eastern European Standard Time',
+        eviction: 'Thu Nov 28 2022 00:00:00 GMT+0200 (Eastern European Standard Time)',
+      },
+    ],
     subTitle: 'Auvergne-Rhône-Alpes',
     price: '700',
     id: '2',

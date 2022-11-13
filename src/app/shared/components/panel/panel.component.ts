@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PriceCurrency } from '@constants/main';
+import { PriceCurrency } from '@constants/main.constants';
 
 @Component({
   selector: 'app-panel',
